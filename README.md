@@ -2,6 +2,8 @@
 
 A Streamlit app that reviews SQL using the OpenAI Responses API plus a small set of local, deterministic checks. It returns structured findings (category, severity, explanation, recommendation), an overall risk rating, a suggested rewrite and caveats.
 
+![Demo: loading an example, running a review and reading the findings](docs/demo.gif)
+
 ![Input view: SQL editor, dialect selector, example loader and the permanent disclaimer](docs/screenshot-input.jpg)
 ![Results view: overall risk and labelled heuristic findings](docs/screenshot-results.jpg)
 
