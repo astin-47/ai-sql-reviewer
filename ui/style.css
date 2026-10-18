@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap');
+
+:root {
+  --ground: #F3F4F0; --ink: #101513; --stone: #E4E7E0; --accent: #0F5C47;
+  --info: #D6DEE6; --low: #D4E4D0; --medium: #F2D9A6; --high: #F0B8AE;
+}
+
+html, body, [class*="st-"], .stApp, button, textarea, input {
+  font-family: 'Schibsted Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+#MainMenu, footer, header[data-testid="stHeader"] { display: none; }
+.block-container { max-width: 1240px; padding: 2.5rem 24px 6rem; }
+
+/* masthead */
+h1.title {
+  font-size: clamp(1.9rem, 7vw, 6.2rem); font-weight: 800; line-height: .95;
+  letter-spacing: -0.045em; margin: 0 0 1rem; padding: 0; max-width: 11em;
+}
+p.lede { font-size: 1.25rem; line-height: 1.5; max-width: 38em; margin: 0 0 2rem; }
+
+/* permanent disclaimer: a solid field, not a warning box */
+.disclaimer {
+  background: var(--ink); color: var(--ground); padding: 1.25rem 1.5rem;
+  font-size: 1.05rem; line-height: 1.5; margin: 0 0 3rem;
+}
+.disclaimer b { font-weight: 700; }
+
+/* inputs */
+.stTextArea textarea {
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: .95rem;
+  line-height: 1.55; background: var(--stone); color: var(--ink); border: 0; padding: 1.1rem;
+}
+.stTextArea label p, .stSelectbox label p { font-size: 1rem; font-weight: 700; }
+[data-baseweb="select"] > div { background: var(--stone); border: 0; }
+.stButton > button {
+  background: var(--accent); color: #fff; border: 0; border-radius: 0;
+  font-size: 1.15rem; font-weight: 700; padding: .85rem 2.2rem;
+  transition: transform .15s ease, background-color .15s ease;
+}
+.stButton > button:hover { background: #0A4535; color: #fff; transform: translateY(-2px); }
+.stButton > button:active { transform: translateY(0); }
+.stButton > button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* results */
+.verdict { padding: 2.5rem 2rem; margin: 3rem 0 0; }
+.verdict h2 {
+  font-size: clamp(2.4rem, 7vw, 5.5rem); font-weight: 800; line-height: .95;
+  letter-spacing: -0.045em; margin: 0 0 .75rem; padding: 0;
+}
+.verdict p { font-size: 1.1rem; margin: 0; max-width: 42em; }
+.risk-low { background: var(--low); } .risk-medium { background: var(--medium); }
+.risk-high { background: var(--high); }
+
+.section-head { margin: 4.5rem 0 1.25rem; }
+.section-head h2 {
+  font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.035em;
+  line-height: 1; margin: 0 0 .6rem; padding: 0;
+}
+.section-head p { font-size: 1.05rem; max-width: 44em; margin: 0; }
+
+.finding {
+  padding: 1.5rem 1.75rem; margin: 0 0 12px; background: var(--stone);
+  animation: rise .5s ease both;
+}
+.finding:nth-child(2) { animation-delay: .07s; } .finding:nth-child(3) { animation-delay: .14s; }
+.finding:nth-child(4) { animation-delay: .21s; } .finding:nth-child(n+5) { animation-delay: .28s; }
+.finding.sev-info { background: var(--info); } .finding.sev-low { background: var(--low); }
+.finding.sev-medium { background: var(--medium); } .finding.sev-high { background: var(--high); }
+.finding .meta { font-size: .95rem; margin: 0 0 .5rem; display: flex; align-items: center; gap: .55rem; }
+.finding .chip { width: .8rem; height: .8rem; background: var(--ink); display: inline-block; }
+.finding h3 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 .75rem; padding: 0; }
+.finding p { font-size: 1.05rem; line-height: 1.55; margin: 0 0 .5rem; max-width: 52em; }
+.empty { font-size: 1.05rem; background: var(--stone); padding: 1.25rem 1.75rem; }
+.ai-summary { font-size: 1.2rem; line-height: 1.5; max-width: 44em; margin: 0 0 1.5rem; }
+.caveats { font-size: 1.05rem; line-height: 1.6; max-width: 48em; padding-left: 1.2rem; }
+.unverified { font-size: 1rem; margin: .5rem 0 0; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .finding { animation: none; }
+  .stButton > button { transition: none; transform: none !important; }
+}
+@media (max-width: 640px) {
+  .block-container { padding: 1.5rem 16px 4rem; }
+  .verdict { padding: 1.75rem 1.25rem; } .finding { padding: 1.25rem; }
+}
