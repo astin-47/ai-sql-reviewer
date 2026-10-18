@@ -4,7 +4,6 @@ A Streamlit app that reviews SQL using the OpenAI Responses API plus a small set
 
 ![Demo: loading an example, running a review and reading the findings](docs/demo.gif)
 
-![Input view: SQL editor, dialect selector, example loader and the permanent disclaimer](docs/screenshot-input.jpg)
 ![Results view: overall risk and labelled heuristic findings](docs/screenshot-results.jpg)
 
 > **AI recommendations require human review.** Suggestions can be wrong, incomplete or not actually faster. Always test against your own data and execution plans.
